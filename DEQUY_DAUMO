@@ -1,0 +1,60 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  int n, m;
+  cin >> m >> n;
+  
+  vector<vector<int> > matrix(m, vector<int> (n));
+  vector<vector<int> > ketqua(m, vector<int> (n));
+  
+  // Nhập ma trận
+  for(int i = 0; i < m; i++)
+    for(int j = 0; j < n; j++)
+      cin >> matrix[i][j];
+  
+  // Tính giá trị lớn nhất từng vị trí
+  ketqua[0][0] = matrix[0][0];
+  for(int i = 1; i < n; i++)
+    ketqua[0][i] = ketqua[0][i - 1] + matrix[0][i];
+  for(int i = 1; i < m; i++)
+    ketqua[i][0] = ketqua[i - 1][0] + matrix[i][0];
+    
+  for(int i = 1; i < m; i++)
+    for(int j = 1; j < n; j++)
+      ketqua[i][j] = max(ketqua[i - 1][j], ketqua[i][j - 1]) + matrix[i][j];
+    
+  // Xuất kết quả lớn nhất
+  cout << ketqua[m - 1][n - 1] << endl;
+  vector<int> x;
+  vector<int> y;
+  x.push_back(m - 1);
+  y.push_back(n - 1);
+  int i = m - 1, j = n - 1;
+  
+  // Truy vết vị trí đi qua
+  while(i > 0 && j > 0){
+    if(ketqua[i - 1][j] > ketqua[i][j - 1]) i--;
+    else j--;
+    x.push_back(i);
+    y.push_back(j);
+  }
+  while(i != 0){
+    i--;
+    x.push_back(i);
+    y.push_back(0);
+  }
+  while(j != 0){
+    j--;
+    x.push_back(0);
+    y.push_back(j);
+  }
+  
+  // Xuất vị trí đi qua
+  for(i = x.size() - 1; i >= 0; i--)
+    cout << x[i] + 1 << ' ' << y[i] + 1 << endl;
+}
