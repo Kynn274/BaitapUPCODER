@@ -144,8 +144,8 @@ bool find_string_left(string s, long long m, long long n, vector<vector<char> > 
       tmp2 = tmp1;
       reverse(tmp2.begin(), tmp2.end());
       if(s == tmp1 || s == tmp2){
-        _x = _left_x[i];
-        _y = _left_y[i];
+        _x = _left_x[i] + j;
+        _y = _left_y[i] + j;
         if(s == tmp1) chieu = 1;
         else chieu = -1;
         break;
@@ -191,8 +191,8 @@ bool find_string_right(string s, long long m, long long n, vector<vector<char> >
       tmp2 = tmp1;
       reverse(tmp2.begin(), tmp2.end());
       if(s == tmp1 || s == tmp2){
-        _x = _right_x[i];
-        _y = _right_y[i];
+        _x = _right_x[i] - j;
+        _y = _right_y[i] + j;
         if(s == tmp1) chieu = 1;
         else chieu = -1;
         break;
