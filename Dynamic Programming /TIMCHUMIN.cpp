@@ -28,3 +28,12 @@ int main() {
   cout << f[m - 1][n - 1];
   return 0;
 }
+/*
+Đúng 4/4
+#######################
+Thông tin chi tiết
+test 1 :	0.006691s 			0 MB		 [đúng]
+test 2 :	0.006941s 			0 MB		 [đúng]
+test 3 :	0.008007s 			0 MB		 [đúng]
+test 4 :	0.008262s 			0 MB		 [đúng]
+*/
