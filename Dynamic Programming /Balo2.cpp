@@ -3,10 +3,8 @@
 using namespace std;
 
 long long f[fmax][fmax];
-long long a[fmax];
-long long c[fmax];
-long long t1[fmax];
-long long t2[fmax];
+long long a[fmax], c[fmax];
+long long t1[fmax], t2[fmax];
 long long n, w;
 
 int main() {
