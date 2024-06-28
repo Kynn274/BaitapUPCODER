@@ -16,3 +16,18 @@ int main(){
     cout << ans;
     return 0;
 }
+/*
+Đúng 10/10
+#######################
+Thông tin chi tiết
+test 1 :	0.007282s 			0 MB		 [đúng]
+test 2 :	0.008380s 			0 MB		 [đúng]
+test 3 :	0.006049s 			0 MB		 [đúng]
+test 4 :	0.006022s 			0 MB		 [đúng]
+test 5 :	0.009706s 			0 MB		 [đúng]
+test 6 :	0.009169s 			0 MB		 [đúng]
+test 7 :	0.011616s 			0 MB		 [đúng]
+test 8 :	0.033367s 			0 MB		 [đúng]
+test 9 :	0.035939s 			0 MB		 [đúng]
+test 10 :	0.061122s 			0 MB		 [đúng]
+ */
