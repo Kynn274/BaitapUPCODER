@@ -12,6 +12,6 @@ int main(){
     unsigned long long s1, s2;
     s1 = pow(_a, _n);
     s2 = pow(_b, _n);
-    cout << s1 % m + s2 % m;
+    cout << (s1 % m + s2 % m) % m;
     return 0;
 }
